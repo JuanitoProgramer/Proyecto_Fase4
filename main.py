@@ -1138,4 +1138,3 @@ footer.pack(pady=30)
 
 ventana.mainloop()
 
-# final del código

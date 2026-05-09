@@ -1,0 +1,8 @@
+[2026-05-09 12:43:16] Cliente registrado correctamente
+[2026-05-09 12:43:16] Servicio Sala registrado
+[2026-05-09 12:43:16] Reserva creada correctamente
+[2026-05-09 12:43:16] ERROR INTENCIONAL: El nombre debe ser válido
+[2026-05-09 13:22:45] Cliente registrado correctamente
+[2026-05-09 13:22:45] Servicio Sala registrado
+[2026-05-09 13:22:45] Reserva creada correctamente
+[2026-05-09 13:22:45] ERROR INTENCIONAL: El nombre debe ser válido

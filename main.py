@@ -1,16 +1,18 @@
+# =============================================================================
 # Sistema Integral de Gestión de Clientes, Servicios y Reservas
+# Empresa: Software FJ
+# =============================================================================
 
 # -------------------------
 # Importaciones
 # -------------------------
-import tkinter as tk
-from tkinter import messagebox
-
 import os
 import re
 import abc
 from datetime import datetime
 from pathlib import Path
+import tkinter as tk
+from tkinter import messagebox, ttk
 
 
 # -------------------------
@@ -40,27 +42,61 @@ def registrar_log(mensaje):
 # Excepciones personalizadas
 # -------------------------
 class ClienteError(Exception):
+    """Excepción para errores relacionados con clientes."""
     pass
 
 
 class ServicioError(Exception):
+    """Excepción para errores relacionados con servicios."""
     pass
 
 
 class ReservaError(Exception):
+    """Excepción para errores relacionados con reservas."""
     pass
 
 
 class PagoError(Exception):
+    """Excepción para errores relacionados con pagos."""
     pass
 
+# Nueva excepción específica para disponibilidad
+class DisponibilidadError(ServicioError):   
+    """Excepción  para indicar cuando un servicio no está disponible. Demuestra jerarquía"""
+    pass
+
+
+class EntidadSistema(abc.ABC):
+    """
+    clase que obliga a todas las entidades del sistema a 
+    implementar mostrar_info() y validar().
+    
+    """
+
+    @abc.abstractmethod
+    def mostrar_info(self):
+        """Muestra información general de la entidad."""
+        pass
+
+    @abc.abstractmethod
+    def validar(self):
+        """Valida que la entidad tiene datos correctos."""
+        pass
+
+    def tipo_entidad(self):
+        """Método concreto disponible para todas las entidades."""
+        return f"Entidad: {self.__class__.__name__}"
+
+#
 
 # -------------------------
 # Clase Cliente
 # -------------------------
 class Cliente:
-    def __init__(self, nombre, documento, correo, telefono):
 
+    def __init__(self, nombre, documento, correo, telefono):
+        
+        # validaciones originales conservadas
         if not isinstance(nombre, str) or not nombre.strip():
             raise ClienteError("El nombre debe ser válido")
 
@@ -75,11 +111,13 @@ class Cliente:
         if not isinstance(telefono, str) or not re.match(r"^\d{10}$", telefono):
             raise ClienteError("Teléfono inválido")
 
+        # Atributos privados con encapsulación
         self.__nombre = nombre
         self.__documento = documento
         self.__correo = correo
         self.__telefono = telefono
 
+    # Propiedades originales conservadas
     @property
     def nombre(self):
         return self.__nombre
@@ -99,7 +137,11 @@ class Cliente:
     def mostrar_info(self):
         return f"Cliente: {self.__nombre} - Documento: {self.__documento}"
 
-
+    def validar(self):
+       #verifica que los datos del cliente sigan siendo correctos 
+       
+        return bool(self.__nombre and self.__documento and self.__correo and self.__telefono)
+ 
 # -------------------------
 # Clase abstracta Servicio
 # -------------------------

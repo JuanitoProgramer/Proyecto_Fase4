@@ -6,3 +6,45 @@
 [2026-05-09 13:22:45] Servicio Sala registrado
 [2026-05-09 13:22:45] Reserva creada correctamente
 [2026-05-09 13:22:45] ERROR INTENCIONAL: El nombre debe ser válido
+[2026-05-09 15:35:49] Servicios de sala cargados correctamente
+[2026-05-09 15:35:49] Servicios de equipo cargados correctamente
+[2026-05-09 15:35:49] Servicios de asesoría cargados correctamente
+[2026-05-09 15:35:49] OP1 - Cliente Juan Miguel registrado correctamente
+[2026-05-09 15:35:49] OP2 - ERROR INTENCIONAL CLIENTE: El nombre debe ser válido
+[2026-05-09 15:35:49] OP3 - ERROR CLIENTE CORREO: Correo inválido
+[2026-05-09 15:35:49] OP4 - Cliente María Pérez registrado
+[2026-05-09 15:35:49] OP5 - ERROR SERVICIO COSTO: Costo base inválido
+[2026-05-09 15:35:49] Reserva confirmada para Juan Miguel
+[2026-05-09 15:35:49] Costo de sala calculado: $119000.00
+[2026-05-09 15:36:05] Servicios de sala cargados correctamente
+[2026-05-09 15:36:05] Servicios de equipo cargados correctamente
+[2026-05-09 15:36:05] Servicios de asesoría cargados correctamente
+[2026-05-09 15:36:05] OP1 - Cliente Juan Miguel registrado correctamente
+[2026-05-09 15:36:05] OP2 - ERROR INTENCIONAL CLIENTE: El nombre debe ser válido
+[2026-05-09 15:36:05] OP3 - ERROR CLIENTE CORREO: Correo inválido
+[2026-05-09 15:36:05] OP4 - Cliente María Pérez registrado
+[2026-05-09 15:36:05] OP5 - ERROR SERVICIO COSTO: Costo base inválido
+[2026-05-09 15:36:05] Reserva confirmada para Juan Miguel
+[2026-05-09 15:36:05] Costo de sala calculado: $119000.00
+[2026-05-09 15:43:43] Servicios de sala cargados correctamente
+[2026-05-09 15:43:43] Servicios de equipo cargados correctamente
+[2026-05-09 15:43:43] Servicios de asesoría cargados correctamente
+[2026-05-09 15:43:43] OP1 - Cliente Juan Miguel registrado correctamente
+[2026-05-09 15:43:43] OP2 - ERROR INTENCIONAL CLIENTE: El nombre debe ser válido
+[2026-05-09 15:43:43] OP3 - ERROR CLIENTE CORREO: Correo inválido
+[2026-05-09 15:43:43] OP4 - Cliente María Pérez registrado
+[2026-05-09 15:43:43] OP5 - ERROR SERVICIO COSTO: Costo base inválido
+[2026-05-09 15:43:43] Reserva confirmada para Juan Miguel
+[2026-05-09 15:43:43] Costo de sala calculado: $119000.00
+[2026-05-09 15:43:43] Costo de sala calculado: $119000.00
+[2026-05-09 15:43:43] Pago procesado: $119000.0 para Juan Miguel
+[2026-05-09 15:43:43] OP6 - Reserva creada y pagada correctamente
+[2026-05-09 15:43:43] OP7 - ERROR RESERVA NO DISPONIBLE: No se puede confirmar: La sala 'Sala No Disponible' no está disponible
+[2026-05-09 15:43:43] Reserva confirmada para María Pérez
+[2026-05-09 15:43:43] Reserva cancelada para María Pérez
+[2026-05-09 15:43:43] OP8 - Reserva cancelada
+[2026-05-09 15:43:43] OP8 - ERROR PAGO CANCELADA: No se puede pagar una reserva cancelada
+[2026-05-09 15:43:43] OP9 - ERROR FECHA RESERVA: Formato de fecha incorrecto (use YYYY-MM-DD)
+[2026-05-09 15:43:43] Reserva confirmada para María Pérez
+[2026-05-09 15:43:43] Costo de asesoría calculado: $171360.00
+[2026-05-09 15:43:43] OP10 - Asesoría reservada con descuento. Costo: $171360.0

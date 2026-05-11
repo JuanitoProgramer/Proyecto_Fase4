@@ -1454,7 +1454,7 @@ tk.Button(
 # Footer 
 tk.Label(
     ventana,
-    text="Creado por: Juan Miguel Salcedo Fulanoito perez",
+    text="Creado por: Juan Miguel Salcedo - Fabio Alexis Montoya Urrego - Software FJ",
     font=("Arial", 14),
     bg="#1f1f1f",
     fg="white"

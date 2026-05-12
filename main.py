@@ -108,7 +108,7 @@ class Cliente:
         ):
             raise ClienteError("Correo inválido")
 
-        if not isinstance(telefono, str) or not re.match(r"^\d{9,10}$", telefono):
+        if not isinstance(telefono, str) or not re.match(r"^\d{10}$", telefono):
             raise ClienteError("Teléfono inválido")
 
         # Atributos privados con encapsulación
@@ -835,8 +835,8 @@ def reservar_sala():
 
     # Cliente
     tk.Label(frame, text="Cliente", font=("Arial", 12), bg="#2f2f2f", fg="white").pack(anchor="w")
-    nombres_clientes = [c.nombre for c in clientes if c.correo == ""] if clientes else ["No hay clientes"]
-    cliente_var = tk.StringVar(value=nombres_clientes[0] if nombres_clientes else "")
+    nombres_clientes = [c.nombre for c in clientes] if clientes else ["No hay clientes"]
+    cliente_var = tk.StringVar(value=nombres_clientes[0])
     menu_clientes = tk.OptionMenu(frame, cliente_var, *nombres_clientes)
     menu_clientes.config(width=30, bg="#8ec5e8")
     menu_clientes.pack(pady=5)
@@ -996,7 +996,7 @@ def alquilar_equipo():
     equipos_disponibles = [
         f"{s.nombre} - {s.tipo_equipo}"
         for s in servicios
-        if isinstance(s, AlquilerEquipo) and not s.disponible
+        if isinstance(s, AlquilerEquipo) and s.disponible
     ]
     if not equipos_disponibles:
         equipos_disponibles = ["No hay equipos disponibles"]
@@ -1148,7 +1148,7 @@ def reservar_asesoria():
     asesorias_disponibles = [
         f"{s.nombre} - {s.tema}"
         for s in servicios
-        if isinstance(s, Asesoria) and not s.disponible
+        if isinstance(s, Asesoria) and s.disponible
     ]
     if not asesorias_disponibles:
         asesorias_disponibles = ["No hay asesorías disponibles"]
@@ -1388,7 +1388,7 @@ def ver_reservas():
 
 ventana = tk.Tk()
 ventana.title("Sistema de Reservas - Software FJ")
-ventana.geometry("820x780")
+ventana.geometry("820x800")
 ventana.config(bg="#1f1f1f")
 
 # Título
@@ -1453,7 +1453,7 @@ tk.Button(
 # Footer 
 tk.Label(
     ventana,
-    text="Creado por: Juan Miguel Salcedo Fulanoito perez",
+    text="Creado por:\n-Juan Miguel Salcedo \n- Fabio Alexis Montoya \n- Santiago Alexandre Cabrera \nSoftware FJ",
     font=("Arial", 14),
     bg="#1f1f1f",
     fg="white"

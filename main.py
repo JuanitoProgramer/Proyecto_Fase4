@@ -919,6 +919,7 @@ def reservar_sala():
                 f"Estado: {reserva.estado}"
             )
             messagebox.showinfo("Éxito", "Reserva creada y confirmada correctamente")
+            ventana_sala.lift()
             entry_fecha.delete(0, tk.END)
             entry_duracion.delete(0, tk.END)
 
@@ -1071,6 +1072,7 @@ def alquilar_equipo():
                 f"Estado: {reserva.estado}"
             )
             messagebox.showinfo("Éxito", "Alquiler creado y confirmado correctamente")
+            ventana_equipo.lift()
             entry_fecha.delete(0, tk.END)
             entry_dias.delete(0, tk.END)
 
@@ -1242,6 +1244,7 @@ def reservar_asesoria():
                 f"Estado: {reserva.estado}"
             )
             messagebox.showinfo("Éxito", "Asesoría reservada y confirmada correctamente")
+            ventana_asesoria.lift()
             entry_fecha.delete(0, tk.END)
             entry_horas.delete(0, tk.END)
 
@@ -1430,6 +1433,7 @@ tk.Button(frame_menu, text="Añadir Cliente", command=abrir_clientes, **estilo_b
 
 # Botón reservar sala 
 tk.Button(frame_menu, text="Reservar Sala", command=reservar_sala, **estilo_boton).pack(pady=10)
+
 # Botón alquilar equipo 
 tk.Button(frame_menu, text="Alquilar Equipo", command=alquilar_equipo, **estilo_boton).pack(pady=10)
 

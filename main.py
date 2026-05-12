@@ -108,7 +108,7 @@ class Cliente:
         ):
             raise ClienteError("Correo inválido")
 
-        if not isinstance(telefono, str) or not re.match(r"^\d{10}$", telefono):
+        if not isinstance(telefono, str) or not re.match(r"^\d{9,10}$", telefono):
             raise ClienteError("Teléfono inválido")
 
         # Atributos privados con encapsulación
@@ -835,8 +835,8 @@ def reservar_sala():
 
     # Cliente
     tk.Label(frame, text="Cliente", font=("Arial", 12), bg="#2f2f2f", fg="white").pack(anchor="w")
-    nombres_clientes = [c.nombre for c in clientes] if clientes else ["No hay clientes"]
-    cliente_var = tk.StringVar(value=nombres_clientes[0])
+    nombres_clientes = [c.nombre for c in clientes if c.correo == ""] if clientes else ["No hay clientes"]
+    cliente_var = tk.StringVar(value=nombres_clientes[0] if nombres_clientes else "")
     menu_clientes = tk.OptionMenu(frame, cliente_var, *nombres_clientes)
     menu_clientes.config(width=30, bg="#8ec5e8")
     menu_clientes.pack(pady=5)
@@ -996,7 +996,7 @@ def alquilar_equipo():
     equipos_disponibles = [
         f"{s.nombre} - {s.tipo_equipo}"
         for s in servicios
-        if isinstance(s, AlquilerEquipo) and s.disponible
+        if isinstance(s, AlquilerEquipo) and not s.disponible
     ]
     if not equipos_disponibles:
         equipos_disponibles = ["No hay equipos disponibles"]
@@ -1148,7 +1148,7 @@ def reservar_asesoria():
     asesorias_disponibles = [
         f"{s.nombre} - {s.tema}"
         for s in servicios
-        if isinstance(s, Asesoria) and s.disponible
+        if isinstance(s, Asesoria) and not s.disponible
     ]
     if not asesorias_disponibles:
         asesorias_disponibles = ["No hay asesorías disponibles"]
@@ -1430,7 +1430,6 @@ tk.Button(frame_menu, text="Añadir Cliente", command=abrir_clientes, **estilo_b
 
 # Botón reservar sala 
 tk.Button(frame_menu, text="Reservar Sala", command=reservar_sala, **estilo_boton).pack(pady=10)
-
 # Botón alquilar equipo 
 tk.Button(frame_menu, text="Alquilar Equipo", command=alquilar_equipo, **estilo_boton).pack(pady=10)
 
@@ -1454,7 +1453,7 @@ tk.Button(
 # Footer 
 tk.Label(
     ventana,
-    text="Creado por: Juan Miguel Salcedo - Fabio Alexis Montoya Urrego - Software FJ",
+    text="Creado por: Juan Miguel Salcedo Fulanoito perez",
     font=("Arial", 14),
     bg="#1f1f1f",
     fg="white"
